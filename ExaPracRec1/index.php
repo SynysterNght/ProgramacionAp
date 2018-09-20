@@ -10,7 +10,7 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <form action="main2.php" method="post" target="_blank">
+        <form action="main.php" method="post" target="_blank">
 
         <fieldset> <legend> Matriz </legend>
 

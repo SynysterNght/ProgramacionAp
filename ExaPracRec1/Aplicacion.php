@@ -37,10 +37,10 @@ public function __construct($n,$m) {
                        $ap++;
                    }
                  $this->eje->set($i, $j, $ap);  
-                 if($ap!=2){$this->resultado->set($pos, $ap);}  
+                 if($ap!=2){$this->resultado->set($pos, $ap);$pos++;}  
                  $flag=1;
+                   $ap++;
                    
-                   $pos++;
                }
                
            }}
