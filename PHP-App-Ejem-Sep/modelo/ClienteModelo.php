@@ -77,9 +77,9 @@ class ClienteModelo {
     public function modificar($id=0) {
         $conexion =  Conectar::conectarBD();
         if($conexion != false){
-            $sql = "UPDATE cliente SET nombre = ?,nit=?,telefono=?, email = ?, edad = ? WHERE idcliente= ?;";
+            $sql = "UPDATE cliente SET nombre = ?,nit=?,telefono=?, email = ?, edad = ? WHERE id_cliente= ?;";
             $stmt = $conexion->prepare($sql);
-            $stmt->bind_param('sssssi', $this->nombre, $this->nit, $this->telefono, $this->email,$this->edad,$id);
+            $stmt->bind_param('ssssii', $this->nombre, $this->nit, $this->telefono, $this->email,$this->edad,$id);
            if ($stmt->execute()) {
                 $conexion->close();
                 return(true);

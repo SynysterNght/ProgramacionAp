@@ -35,3 +35,9 @@ git checkout (nameofthebranch)
 
 ///merge branches
 git merge 
+
+
+////copiar repositorio sin folder
+git init
+git remote add origin git@github.com:me/name.git
+git pull origin master

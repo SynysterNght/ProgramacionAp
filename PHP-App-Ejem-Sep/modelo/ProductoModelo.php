@@ -74,9 +74,9 @@ class productoModelo {
     public function modificar($idProducto=0) {
         $conexion =  Conectar::conectarBD();
         if($conexion != false){
-            $sql = "UPDATE producto SET nombre = ?,stock=?,costo=?, precio = ?,  WHERE idProducto= ?;";
+            $sql = "UPDATE producto SET Nombre = ?,Stock=?, Costo=?, Precio = ?  WHERE Id_producto= ?;";
             $stmt = $conexion->prepare($sql);
-            $stmt->bind_param('siii', $this->nombre, $this->stock, $this->costo, $this->precio,$idProducto);
+            $stmt->bind_param('siiii', $this->nombre, $this->stock, $this->costo, $this->precio,$idProducto);
            if ($stmt->execute()) {
                 $conexion->close();
                 return(true);
