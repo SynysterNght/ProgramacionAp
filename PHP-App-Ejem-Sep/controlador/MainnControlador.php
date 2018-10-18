@@ -12,5 +12,6 @@ if (isset($_POST['btn_producto'])) {
 
 if (isset($_POST['btn_venta'])) {
     echo "<br>Presiono el boton venta ";
+       require_once __DIR__ . '/../vista/VentaForm.php'; 
 }
 
