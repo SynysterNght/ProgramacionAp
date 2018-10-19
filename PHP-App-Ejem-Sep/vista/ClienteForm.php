@@ -70,6 +70,7 @@ and open the template in the editor.
       <input type="submit" value="Modificar" class="btn btn-warning" name="btn_modificar">
       <input type="submit" value="Buscar" class="btn btn-info" name="btn_buscar">
       <input type="submit" value="Listar" class="btn btn-primary" name="btn_listar">
+      <input type="submit" value="Estadistica" class="btn btn-primary" name="btn_Estadistica">
       
     </center>
 

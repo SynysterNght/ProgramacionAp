@@ -94,3 +94,44 @@ if (isset($_POST['btn_borrar'])) {
     echo "<br>Presiono el boton borrar";
     $rows = $ObjCli->borrarCliente($idCliente);   
 }
+if(isset($_POST['btn_Estadistica'])){
+    echo "debuggeo";
+    
+    
+    mostrarest($ObjCli->estadistica(), $ObjCli->menor(),$ObjCli->mayor(), $ObjCli->pmedio(),$ObjCli->pmayor(),$ObjCli->pmenor());
+    
+}  
+function mostrarest($medio = "", $menor="",$mayor="",$pmedio="", $pmayor="",$pmenor=""){
+    
+    $may=$mayor->fetch_row();
+    $men=$menor->fetch_row();
+    $med=$medio->fetch_row();
+    
+    $pmay=$pmayor->fetch_row();
+    $pmen=$pmenor->fetch_row();
+    $pmed=$pmedio->fetch_row();
+    
+    echo "<table width='75%' border='5' align='center' cellspacing='5' bordercolor='#000000' bgcolor='#FFCC99'>";
+    echo "<caption><h1>Estadistica de Clientes</caption>";
+    echo "<tr>";
+    echo "<th>Rangos</th>";
+    echo "<th>Cantidad</th>";
+    echo "<th>Promedio</th>";
+    echo "</tr>";
+       echo "<tr>";
+       echo "<td>"."Menores a 15"."</td>";
+       echo "<td>".$men[0]."</td>";
+       echo "<td>".$pmen[0]."</td>";
+       echo "</tr>";  
+       echo "<tr>";
+       echo "<td>"."Entre 15 a 45"."</td>";
+       echo "<td>".$med[0]."</td>";
+       echo "<td>".$pmed[0]."</td>";
+       echo "</tr>";  
+       echo "<tr>";
+       echo "<td>"."Mayores a 45"."</td>";
+       echo "<td>".$may[0]."</td>";
+       echo "<td>".$pmay[0]."</td>";
+       echo "</tr>";  
+    echo"</table>";
+}
