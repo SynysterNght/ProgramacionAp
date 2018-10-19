@@ -113,13 +113,60 @@ class ClienteModelo {
             return -1;
         }
     }
-}
+
+    public function estadistica(){
+        $sql = "SELECT COUNT(edad) FROM Cliente WHERE (cliente.edad > 14 AND cliente.edad <46); ";
+        $conexion = Conectar::conectarBD();
+        $rows = $conexion->query($sql);
+
+        
+        return $rows;
+    }
     
+    public function menor(){
+        $sql = "SELECT COUNT(edad) FROM Cliente WHERE (cliente.edad < 15);  ";
+        $conexion = Conectar::conectarBD();
+        $rows = $conexion->query($sql);
 
+        
+        return $rows;
+    }
+    
+     public function mayor(){
+        $sql = "SELECT COUNT(edad) FROM Cliente WHERE (cliente.edad >45 );  ";
+        $conexion = Conectar::conectarBD();
+        $rows = $conexion->query($sql);
 
+        
+        return $rows;
+    }
+    
+    public function pmenor() {
+        $sql = "SELECT AVG(edad) FROM cliente WHERE edad<15; ";
+        $conexion = Conectar::conectarBD();
+        $rows = $conexion->query($sql);
 
+        
+        return $rows;
+    }
+     public function pmayor() {
+        $sql = "SELECT AVG(edad) FROM cliente WHERE edad>45; ";
+        $conexion = Conectar::conectarBD();
+        $rows = $conexion->query($sql);
 
+        
+        return $rows;
+    }
 
+     public function pmedio() {
+        $sql = "SELECT AVG(edad) FROM cliente WHERE (edad>14 and edad<46); ";
+        $conexion = Conectar::conectarBD();
+        $rows = $conexion->query($sql);
+
+        
+        return $rows;
+    }
+}
 
 
 
