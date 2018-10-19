@@ -14,7 +14,7 @@
 class Vec {
     private $tam;
     private $v=array();
-    public function __construct($n){
+    public function __construct($n=0){
         $this->tam=$n;
     }
     
